@@ -42,10 +42,11 @@ public class Buku extends javax.swing.JFrame {
         TF_penulis = new javax.swing.JTextField();
         btnSelesai1 = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
+        btn_kembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         jLabel1.setText("Buku");
 
@@ -66,7 +67,7 @@ public class Buku extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
 
         jLabel2.setText("Judul");
 
@@ -82,6 +83,13 @@ public class Buku extends javax.swing.JFrame {
 
         btnHapus.setText("Hapus");
 
+        btn_kembali.setText("Kembali");
+        btn_kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_kembaliActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -89,26 +97,30 @@ public class Buku extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TF_judul)
-                    .addComponent(TF_penerbit)
-                    .addComponent(TF_tahunTerbit)
-                    .addComponent(TF_halaman)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(TF_penulis))
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(btnSelesai1)
-                .addGap(40, 40, 40)
-                .addComponent(btnHapus)
-                .addContainerGap(57, Short.MAX_VALUE))
+                            .addComponent(TF_judul)
+                            .addComponent(TF_penerbit)
+                            .addComponent(TF_tahunTerbit)
+                            .addComponent(TF_halaman)
+                            .addComponent(TF_penulis)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(btn_kembali)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(btnHapus)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnSelesai1)
+                        .addGap(24, 24, 24))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,8 +147,9 @@ public class Buku extends javax.swing.JFrame {
                 .addComponent(TF_penulis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSelesai1)
-                    .addComponent(btnHapus))
+                    .addComponent(btnHapus)
+                    .addComponent(btn_kembali)
+                    .addComponent(btnSelesai1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -158,6 +171,10 @@ public class Buku extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kembaliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_kembaliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +222,7 @@ public class Buku extends javax.swing.JFrame {
     private javax.swing.JTextField TF_tahunTerbit;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnSelesai1;
+    private javax.swing.JButton btn_kembali;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

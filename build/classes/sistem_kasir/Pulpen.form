@@ -52,7 +52,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="Lpulpen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -61,14 +61,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="Lpulpen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="Lpulpen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pulpen"/>
           </Properties>
@@ -92,24 +92,25 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="TF_merek" max="32767" attributes="0"/>
                       <Component id="TF_harga" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CB_jenisWarna" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Lmerek" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="Lharga" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="Lwarna" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Ljenis" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="CB_jenisWarna" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btn_kembali" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="btnHapus" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <Component id="btnSelesai" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                  <Component id="btnSelesai" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnHapus" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="79" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -125,13 +126,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="TF_harga" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Lwarna" min="-2" max="-2" attributes="0"/>
+                  <Component id="Ljenis" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="CB_jenisWarna" min="-2" max="-2" attributes="0"/>
+                  <Component id="CB_jenisWarna" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnSelesai" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnHapus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_kembali" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -153,9 +155,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TF_harga">
         </Component>
-        <Component class="javax.swing.JLabel" name="Lwarna">
+        <Component class="javax.swing.JLabel" name="Ljenis">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Warna"/>
+            <Property name="text" type="java.lang.String" value="Jenis"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="CB_jenisWarna">
@@ -168,6 +170,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CB_jenisWarnaActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -181,6 +186,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Hapus"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_kembali">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kembali"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_kembaliActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
