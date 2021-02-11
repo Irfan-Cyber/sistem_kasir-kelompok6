@@ -5,6 +5,8 @@
  */
 package sistem_kasir;
 
+import sistem_kasir.data.PulpenFactory;
+
 /**
  *
  * @author Irfan_Mulyana
@@ -14,6 +16,8 @@ public class Pulpen extends javax.swing.JFrame {
     /**
      * Creates new form Pulpen
      */
+    PulpenFactory pulpenFactory;
+
     public Pulpen() {
         initComponents();
     }
@@ -32,8 +36,6 @@ public class Pulpen extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Lmerek = new javax.swing.JLabel();
         TF_merek = new javax.swing.JTextField();
-        Lharga = new javax.swing.JLabel();
-        TF_harga = new javax.swing.JTextField();
         Ljenis = new javax.swing.JLabel();
         CB_jenisWarna = new javax.swing.JComboBox<>();
         btnSelesai = new javax.swing.JButton();
@@ -42,7 +44,7 @@ public class Pulpen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Lpulpen.setText("Pulpen");
 
@@ -63,11 +65,9 @@ public class Pulpen extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Lmerek.setText("Merek");
-
-        Lharga.setText("Harga");
 
         Ljenis.setText("Jenis");
 
@@ -79,6 +79,11 @@ public class Pulpen extends javax.swing.JFrame {
         });
 
         btnSelesai.setText("Selesai");
+        btnSelesai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelesaiActionPerformed(evt);
+            }
+        });
 
         btnHapus.setText("Hapus");
 
@@ -97,21 +102,19 @@ public class Pulpen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TF_merek)
-                    .addComponent(TF_harga)
-                    .addComponent(CB_jenisWarna, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lmerek)
-                            .addComponent(Lharga)
-                            .addComponent(Ljenis))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_kembali)
                         .addGap(42, 42, 42)
                         .addComponent(btnHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(btnSelesai)
-                        .addGap(9, 9, 9)))
+                        .addGap(9, 9, 9))
+                    .addComponent(CB_jenisWarna, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lmerek)
+                            .addComponent(Ljenis))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -121,11 +124,7 @@ public class Pulpen extends javax.swing.JFrame {
                 .addComponent(Lmerek)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TF_merek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Lharga)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TF_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Ljenis)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CB_jenisWarna, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,7 +133,7 @@ public class Pulpen extends javax.swing.JFrame {
                     .addComponent(btnSelesai)
                     .addComponent(btnHapus)
                     .addComponent(btn_kembali))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,6 +161,13 @@ public class Pulpen extends javax.swing.JFrame {
     private void btn_kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kembaliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_kembaliActionPerformed
+
+    private void btnSelesaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesaiActionPerformed
+        pulpenFactory.setMerek(TF_merek.getText());
+        pulpenFactory.setType(CB_jenisWarna.getSelectedItem().toString());
+        new Produk().setProduk(pulpenFactory.getPulpen()).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSelesaiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,11 +206,9 @@ public class Pulpen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_jenisWarna;
-    private javax.swing.JLabel Lharga;
     private javax.swing.JLabel Ljenis;
     private javax.swing.JLabel Lmerek;
     private javax.swing.JLabel Lpulpen;
-    private javax.swing.JTextField TF_harga;
     private javax.swing.JTextField TF_merek;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnSelesai;
@@ -212,4 +216,9 @@ public class Pulpen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    javax.swing.JFrame setPulpenFactory(PulpenFactory pulpenFactory) {
+        this.pulpenFactory = pulpenFactory;
+        return this;
+    }
 }

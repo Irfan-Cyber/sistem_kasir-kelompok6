@@ -5,12 +5,15 @@
  */
 package sistem_kasir;
 
+import sistem_kasir.data.model.BukuModel;
+
 /**
  *
  * @author Irfan_Mulyana
  */
 public class Buku extends javax.swing.JFrame {
 
+    BukuModel bukuModel;
     /**
      * Creates new form Sistem_kasir2
      */
@@ -46,7 +49,7 @@ public class Buku extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setText("Buku");
 
@@ -67,7 +70,7 @@ public class Buku extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setText("Judul");
 
@@ -80,6 +83,11 @@ public class Buku extends javax.swing.JFrame {
         jLabel6.setText("Penulis");
 
         btnSelesai1.setText("Selesai");
+        btnSelesai1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelesai1ActionPerformed(evt);
+            }
+        });
 
         btnHapus.setText("Hapus");
 
@@ -176,6 +184,22 @@ public class Buku extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_kembaliActionPerformed
 
+    private void btnSelesai1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelesai1ActionPerformed
+        //String penerbit, String penulis, int tahunTerbit, int halaman,
+        String penerbit = TF_penerbit.getText();
+        String penulis = TF_penulis.getText();
+        int tahunTerbit = Integer.parseInt(TF_tahunTerbit.getText());
+        int halaman = Integer.parseInt(TF_halaman.getText());
+        
+        bukuModel.setHalaman(halaman);
+        bukuModel.setPenerbit(penerbit);
+        bukuModel.setPenulis(penulis);
+        bukuModel.setTahunTerbit(tahunTerbit);
+        
+        new Produk().setProduk(bukuModel).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSelesai1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,4 +256,9 @@ public class Buku extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    javax.swing.JFrame setBuku(BukuModel bukuModel) {
+        this.bukuModel = bukuModel;
+        return this;
+    }
 }
