@@ -131,11 +131,11 @@ public class Produk extends javax.swing.JFrame {
                     .addComponent(CB_jenisBarang, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(72, 72, 72)
                 .addComponent(btnSelesai)
-                .addGap(29, 29, 29)
+                .addGap(28, 28, 28)
                 .addComponent(Cetak)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
